@@ -1,4 +1,4 @@
-package nl.han.oose.dea.rest.controllers.dto;
+package nl.han.oose.dea.rest.resources.dto;
 
 public class Item {
     private String sku;

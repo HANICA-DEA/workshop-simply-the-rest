@@ -1,6 +1,6 @@
-package nl.han.oose.dea.rest.controllers;
+package nl.han.oose.dea.rest.resources;
 
-import nl.han.oose.dea.rest.controllers.dto.Item;
+import nl.han.oose.dea.rest.resources.dto.Item;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
