@@ -1,6 +1,7 @@
 package nl.han.oose.dea.rest.services.dto;
 
 public class ItemDTO {
+    private int id;
     private String name;
     private String[] category;
     private String title;
@@ -8,7 +9,8 @@ public class ItemDTO {
     public ItemDTO() {
     }
 
-    public ItemDTO(String name, String[] category, String title) {
+    public ItemDTO(int id, String name, String[] category, String title) {
+        this.id = id;
         this.name = name;
         this.category = category;
         this.title = title;
@@ -36,5 +38,13 @@ public class ItemDTO {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

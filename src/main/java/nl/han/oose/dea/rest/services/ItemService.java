@@ -12,17 +12,17 @@ public class ItemService {
     private List<ItemDTO> items = new ArrayList<>();
 
     public ItemService() {
-        items.add(new ItemDTO("Bread", new String[]{"Breakfast, Lunch"}, "Delicious!"));
-        items.add(new ItemDTO("Butter", new String[]{"Breakfast, Lunch"}, "Use it with bread"));
-        items.add(new ItemDTO("Honey", new String[]{"Breakfast, Lunch"}, "Use it with bread"));
+        items.add(new ItemDTO(1, "Bread", new String[]{"Breakfast, Lunch"}, "Delicious!"));
+        items.add(new ItemDTO(2, "Butter", new String[]{"Breakfast, Lunch"}, "Use it with bread"));
+        items.add(new ItemDTO(3, "Honey", new String[]{"Breakfast, Lunch"}, "Use it with bread"));
     }
 
     public List<ItemDTO> getAll() {
         return items;
     }
 
-    public ItemDTO getItem(String name) {
-        Optional<ItemDTO> itemForName = items.stream().filter(item -> item.getName().equals(name)).findFirst();
+    public ItemDTO getItem(int id) {
+        Optional<ItemDTO> itemForName = items.stream().filter(item -> item.getId() == id).findFirst();
 
         if (itemForName.isPresent()) {
             return itemForName.get();
