@@ -1,12 +1,17 @@
 package nl.han.oose.dea.rest.services;
 
 import nl.han.oose.dea.rest.services.dto.ItemDTO;
+import nl.han.oose.dea.rest.services.exceptions.IdAlreadyInUserException;
 import nl.han.oose.dea.rest.services.exceptions.ItemNotAvailableException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The {@code ItemService} can be used for accessing a {@link List} of {@link ItemDTO} instances, but also
+ * for adding instances to and deleting from the {@link List}.
+ */
 public class ItemService {
 
     private List<ItemDTO> items = new ArrayList<>();
@@ -17,10 +22,37 @@ public class ItemService {
         items.add(new ItemDTO(3, "Honey", new String[]{"Breakfast, Lunch"}, "Use it with bread"));
     }
 
+    /**
+     * Return the full {@link List} of {@link ItemDTO} instances.
+     *
+     * @return The full {@link List} of {@link ItemDTO} instances.
+     */
     public List<ItemDTO> getAll() {
         return items;
     }
 
+    /**
+     * Add an item to the {@link List} of items.
+     * <p>
+     * Note that the newly added item should have an unique Id.
+     *
+     * @param itemDTO The {@link ItemDTO} to be added
+     * @throws IdAlreadyInUserException Thrown if the Id is not unique
+     */
+    public void addItem(ItemDTO itemDTO) {
+        if (items.stream().anyMatch(item -> item.getId() == itemDTO.getId())) {
+            throw new IdAlreadyInUserException();
+        }
+
+        items.add(itemDTO);
+    }
+
+    /**
+     * Return a specific {@link ItemDTO} with the given Id.
+     *
+     * @param id The Id of the {@link ItemDTO} to be returned
+     * @throws ItemNotAvailableException Thrown if there is no {@link ItemDTO} for the given Id
+     */
     public ItemDTO getItem(int id) {
         Optional<ItemDTO> itemForName = items.stream().filter(item -> item.getId() == id).findFirst();
 

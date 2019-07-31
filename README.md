@@ -65,12 +65,14 @@ geeft aan welke HTTP-methode op welke Java methode gemapped wordt.
  
 
 ---
+
 **Zorg dat dit werkt!**
 
 Indien je **niet** de tekst *Up & Running* ziet, kan dit verschillende oorzaken hebben.
 Het kunnen fouten zijn bij de configuratie van TomEE, fouten in je project of de code en fouten bij het
 deployen. Tot slot is het ook denkbaar dat je een waarde hebt staan bij het invoerveld *Application Context*
 op de *Deployement*-tab van de *Run-configuratie* in je IDE. Zorg dat hier enkel de root (*/*) staat.
+
 ---
 
 ## 3: Een REST-Resource voor het ophalen van Items
@@ -148,7 +150,7 @@ de juiste `Response` importeert. Het betreft deze: `javax.ws.rs.core.Response`.
 * Creeer een `Response` met `List<ItemDTO>` als *entity* en een statuscode 200. Gebruik deze resource
 om te achterhalen hoe je een dergelijk Object moet maken: [Set a Response Body in JAX-RS](https://www.baeldung.com/jax-rs-response)
 
-## 8: Creëer een REST-Resource voor een enkel *item*
+## 8: Creëer een REST-Resource voor het ophalen van een enkel *item*
 Voeg aan je klasse een nieuwe REST-Resource toe die het mogelijk maakt om een enkele *item*, op basis
 van het *id* te retourneren.
 
@@ -161,4 +163,30 @@ van het *id* te retourneren.
 De vraag is nu vooral hoe om te gaan met de `:id` uit het pad. Raadpleeg daarvoor deze bron: 
 [JAX-RS path params](https://www.mkyong.com/webservices/jax-rs/jax-rs-pathparam-example/)
 
+## 9: Creëer een REST-Resource voor het toevoegen van aan *item*
+Voeg aan je klasse een nieuwe REST-Resource toe die het mogelijk maakt om een *item* via de `ItemService` toe 
+te voegen.
 
+* De Resource is te bereiken via het pad `/items`
+* De Resource wordt aangesproken middels een POST request
+* De methode zal nu een `ItemDTO` als parameter hebben. Wanneer je een correcte 
+[JSON](https://www.json.org/) in de body van je request meestuurt, zal JAX-RS dit automatisch
+omzetten naar een correct Java-Object.
+* De Resource consumeert `application/json`
+* Er wordt een HTTP-Status *Created* geretourneerd. Zoek op welke code dat is
+* Implementeer enkel de happy-flow
+* Gebruik Postman voor het testen van je Resource. Bekijk goed hoe je 
+[JSON](https://www.json.org/) eruit moet zien.
+
+Na het toevoegen van een POST kun je via een GET naar `/items` bekijken of het nieuwe
+item is toegevoegd. De kans is groot dat dat niet zo zal zijn. Dit komt omdat TomEE voor **ieder**
+request een nieuwe instantie van de `ItemResource` klasse maakt. En daarmee ook van de klasse
+`ItemService`, waarmee de lijst van items weer op zijn default waarde wordt geïnitialiseerd.
+
+In een normale applicatie zul je dan ook een Database gebruik voor het persisteren van je Data. In 
+dit geval doen we dat niet en kun je het probleem oplossing door `@Singleton` boven je `ItemResource`-klasse
+te zetten. Daarmee maakt haar maar één instantie aan, die over verschillende requests wordt hergebruikt.
+
+## 10: Toevoegen foutafhandeling
+In voorgaande twee onderdelen heb je enkel de happy-flow geïmplementeerd. Er zijn echter twee situaties
+waar het mis kan gaan. Kijk maar naar de code van `ItemService`.
