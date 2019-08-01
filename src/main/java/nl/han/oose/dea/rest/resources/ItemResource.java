@@ -54,4 +54,12 @@ public class ItemResource {
     public Response getItem(@PathParam("id") int id) {
         return Response.ok().entity(itemService.getItem(id)).build();
     }
+
+    @DELETE
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteItem(@PathParam("id") int id) {
+        itemService.deleteItem(id);
+        return Response.ok().build();
+    }
 }

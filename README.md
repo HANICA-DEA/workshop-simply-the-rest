@@ -189,4 +189,20 @@ te zetten. Daarmee maakt haar maar één instantie aan, die over verschillende r
 
 ## 10: Toevoegen foutafhandeling
 In voorgaande twee onderdelen heb je enkel de happy-flow geïmplementeerd. Er zijn echter twee situaties
-waar het mis kan gaan. Kijk maar naar de code van `ItemService`.
+waar het mis kan gaan. Kijk maar naar de code van `ItemService`. In beide gevallen wordt een *unchecked*
+`Exception` gegooit, welke uiteindelijk via je REST-Resource van JAX-RS uitkomt. JAX-RS handelt dit verder
+af en stuurt een standaard HTTP-Response terug met een foutcode.
+
+Zorg ervoor dat je zelf een specifieke foutcode teruggeeft in beide situaties
+
+* In het geval van een `ItemNotAvailableException` behoor je een HTTP-Statuscode 404 terug te geven.
+* In het geval van een `IDAlreadyInUseException` behoor je een HTTP-Statuscode 409 terug te geven.
+
+Misschien is je eerste gedachte dit met een `try...catch` op te lossen. In de `try` roep je de `ItemService`
+aan en in de `catch` retourneer je een `Response`-object met de juiste status-code. Dat zal zeker werken, 
+maar heeft tot gevolg dat je overal `try...catch` constructies in je code krijgt. Het kan dus aanzienlijk
+eleganter.
+
+Gebruik deze resource for het correct implemeteren van de foutafhandeling: [Exception Handling](https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-en/cn/part1/chapter7/exception_handling.html)
+
+## 11: Implementeer ook het verwijderen van een *item*
