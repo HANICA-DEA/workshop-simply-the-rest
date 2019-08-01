@@ -206,7 +206,7 @@ eleganter.
 Gebruik deze resource for het correct implemeteren van de foutafhandeling: [Exception Handling](https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-en/cn/part1/chapter7/exception_handling.html)
 
 ## 11: Implementeer ook het verwijderen van een *item*
-Implementeer tot slot ook het verwijderen van een *item* De `ItemService` bevat hier al de benodigde methode voor.
+Implementeer tot slot ook het verwijderen van een *item*. De `ItemService` bevat hier al de benodigde methode voor.
 
 * Bedenk via welk pad de Resource te bereiken is
 * Bedenk welke HTTP-Methode er gebruikt moet worden
