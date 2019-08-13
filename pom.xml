@@ -5,7 +5,10 @@
     <artifactId>rest</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
+
     <name>Simply the Rest</name>
+    <url>https://github.com/HANICA-DEA/workshop-simply-the-rest</url>
+
     <dependencies>
         <dependency>
             <groupId>javax</groupId>
