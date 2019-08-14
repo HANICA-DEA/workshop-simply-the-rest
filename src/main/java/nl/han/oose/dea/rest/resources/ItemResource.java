@@ -42,7 +42,7 @@ public class ItemResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response getJsonItems(ItemDTO itemDTO) {
+    public Response addItem(ItemDTO itemDTO) {
         itemService.addItem(itemDTO);
 
         return Response.status(201).build();
