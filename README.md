@@ -13,7 +13,7 @@ Tot slot zullen we ook nette foutafhandeling toe voegen, met behulp van
 
 ## Voorbereiding
 Voor deze oefening moet [TomEE Plus](tomee.apache.org/download-ng.html) geïnstalleerd zijn en zodanig 
-geconfigueerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen.
+geconfigureerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen.
 
 ## 1: Aanmaken nieuwe JavaEE 8 project
 Gebruik Maven voor het aanmaken van een nieuw JavaEE 8 project. Gebruik hiervoor 
@@ -24,7 +24,7 @@ Merk op dat dit Archetype spreekt over JakartaEE en Eclipse Microprofile (zie hi
 naam voor JavaEE en Eclipse Microprofile is een uitbreiding daarop. Eclipse Microprofile zullen we verder niet
 nodig hebben. Voer hierom de volgende acties uit:
 
-* Verwijder de dependencie op Eclipse Microprofile uit de POM
+* Verwijder de dependency op Eclipse Microprofile uit de POM
 * Verwijder de klasse `com.airhacks.ping.boundary.PingResource`
 * Verwijder het configuratiebetand `microprofile-configuration.properties` uit de de map *resources/META-INF*
 
