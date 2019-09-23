@@ -13,7 +13,7 @@ Tot slot zullen we ook nette foutafhandeling toe voegen, met behulp van
 
 ## Voorbereiding
 Voor deze oefening moet [TomEE Plus](tomee.apache.org/download-ng.html) geïnstalleerd zijn en zodanig 
-geconfigueerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen.
+geconfigureerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen.
 
 ## 1: Aanmaken nieuwe JavaEE 8 project
 Gebruik Maven voor het aanmaken van een nieuw JavaEE 8 project. Gebruik hiervoor een archetype voor een standaard
@@ -49,14 +49,13 @@ public class HealthCheckResource {
     }
 }
 ```
-* Deploy je applicatie op TomEE en navigeer via de browser naar de url [http://localhost:8080/health](). 
+* Deploy je applicatie op TomEE en navigeer via de browser naar de url [http://localhost:8080/health](http://localhost:8080/health). 
 
 Merk op dat een Rest-Resource een simpele, standaard Java-Klasse is. Ook wel een 
 [POJO](https://en.wikipedia.org/wiki/Plain_old_Java_object) (Plain Old Java Object) genoemd. Boven de klasse
 staat de annotatie die aangeeft via welk pad de resource te benaderen is. De annotatie boven de methode
 geeft aan welke HTTP-methode op welke Java methode gemapped wordt.
  
-
 ---
 
 **Zorg dat dit werkt!**
