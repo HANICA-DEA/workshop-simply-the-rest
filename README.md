@@ -16,21 +16,14 @@ Voor deze oefening moet [TomEE Plus](tomee.apache.org/download-ng.html) geïnsta
 geconfigureerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen.
 
 ## 1: Aanmaken nieuwe JavaEE 8 project
-Gebruik Maven voor het aanmaken van een nieuw JavaEE 8 project. Gebruik hiervoor 
-[Java EE 8 Essentials](http://www.adam-bien.com/roller/abien/entry/java_ee_8_essentials_archetype) archetype van
-Adam Bien.
+Gebruik Maven voor het aanmaken van een nieuw JavaEE 8 project. Gebruik hiervoor een archetype voor een standaard
+Java project. 
 
-Merk op dat dit Archetype spreekt over JakartaEE en Eclipse Microprofile (zie hiervoor ook de POM). JakartaEE is de 'nieuwe'
-naam voor JavaEE en Eclipse Microprofile is een uitbreiding daarop. Eclipse Microprofile zullen we verder niet
-nodig hebben. Voer hierom de volgende acties uit:
+Om hier nu een JavaEE 8 project te maken moeten de volgende stappen worden genomen:
 
-* Verwijder de dependency op Eclipse Microprofile uit de POM
-* Verwijder de klasse `com.airhacks.ping.boundary.PingResource`
-* Verwijder het configuratiebetand `microprofile-configuration.properties` uit de de map *resources/META-INF*
-
-Het project bevat nu nog een Java-klasse die we niet nodig zullen hebben. Dit betreft de klasse `JAXRSConfiguration`.
-
-* Verwijder de klasse `JAXRSConfiguration`, inclusief de package waar hij in zit.
+* Als default zal *Maven* de gecompileerde klassen samenbundelen tot een `.jar` bestand. Voor een JavaEE project moet dit
+echter een `.war` bestand zijn. Lees op de website van [Maven](https://maven.apache.org/pom.html) na hoe je dit aanpast.
+* Voeg een dependency toe op [JavaEE](https://mvnrepository.com/artifact/javax/javaee-api)
 
 Tot slot moeten we de klassen toevoegen die in deze repository te vinden zijn. Dit betreft de volledige `services`
 map, inclusief alle submappen en bestanden.
@@ -63,7 +56,6 @@ Merk op dat een Rest-Resource een simpele, standaard Java-Klasse is. Ook wel een
 staat de annotatie die aangeeft via welk pad de resource te benaderen is. De annotatie boven de methode
 geeft aan welke HTTP-methode op welke Java methode gemapped wordt.
  
-
 ---
 
 **Zorg dat dit werkt!**
