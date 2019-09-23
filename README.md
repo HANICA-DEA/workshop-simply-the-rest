@@ -56,7 +56,7 @@ public class HealthCheckResource {
     }
 }
 ```
-* Deploy je applicatie op TomEE en navigeer via de browser naar de url [http://localhost:8080/health](). 
+* Deploy je applicatie op TomEE en navigeer via de browser naar de url [http://localhost:8080/health](http://localhost:8080/health). 
 
 Merk op dat een Rest-Resource een simpele, standaard Java-Klasse is. Ook wel een 
 [POJO](https://en.wikipedia.org/wiki/Plain_old_Java_object) (Plain Old Java Object) genoemd. Boven de klasse
