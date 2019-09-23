@@ -184,7 +184,7 @@ te zetten. Daarmee maakt haar maar één instantie aan, die over verschillende r
 ## 10: Toevoegen foutafhandeling
 In voorgaande twee onderdelen heb je enkel de happy-flow geïmplementeerd. Er zijn echter twee situaties
 waar het mis kan gaan. Kijk maar naar de code van `ItemService`. In beide gevallen wordt een *unchecked*
-`Exception` gegooit, welke uiteindelijk via je REST-Resource van JAX-RS uitkomt. JAX-RS handelt dit verder
+`Exception` gegooid, welke uiteindelijk via je REST-Resource van JAX-RS uitkomt. JAX-RS handelt dit verder
 af en stuurt een standaard HTTP-Response terug met een foutcode.
 
 Zorg ervoor dat je zelf een specifieke foutcode teruggeeft in beide situaties
