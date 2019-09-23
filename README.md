@@ -65,6 +65,8 @@ Het kunnen fouten zijn bij de configuratie van TomEE, fouten in je project of de
 deployen. Tot slot is het ook denkbaar dat je een waarde hebt staan bij het invoerveld *Application Context*
 op de *Deployement*-tab van de *Run-configuratie* in je IDE. Zorg dat hier enkel de root (*/*) staat.
 
+Als je bovenstaande tips hebt toegepast en je ziet (nog steeds) foutmeldingen die wijzen op iets niet kunnen deployen, dan is er vermoedelijk sprake van een rechtenprobleem: herstart IntelliJ als Administrator. 
+
 ---
 
 ## 3: Een REST-Resource voor het ophalen van Items
