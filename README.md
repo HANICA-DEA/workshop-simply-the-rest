@@ -13,7 +13,7 @@ Tot slot zullen we ook nette foutafhandeling toe voegen, met behulp van
 
 ## Voorbereiding
 Voor deze oefening moet [TomEE Plus](tomee.apache.org/download-ng.html) geïnstalleerd zijn en zodanig 
-geconfigureerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen.
+geconfigureerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen. 
 
 ## 1: Aanmaken nieuwe JavaEE 8 project
 Gebruik Maven voor het aanmaken van een nieuw JavaEE 8 project. Gebruik hiervoor een archetype voor een standaard
@@ -32,6 +32,8 @@ map, inclusief alle submappen en bestanden.
 klassen uit `services` en dat je je project kunt compileren.
 
 De klassen uit `services` zullen we verderop gaan gebruiken.
+
+Ga voor dit project in IntelliJ naar Edit Configuration (naast de Run en Debug knoppen bovenin het scherm). Klik links op het plusje (+) en kies voor TomEE Server -> Local. Klik naast Application Server op Configure, klik op het plusje (+) en maak een nieuwe server-configuratie aan die verwijst naar de map waar je TomEE hebt geinstalleerd/uitgepakt en druk op OK. Onderin de dialoog staat een melding "Warning: No artifacts marked for deployment", selecteer op dit probleem op te lossen de Fix-knop en kies de bovenste van de twee opties, het war-bestand. Op deze manier is de war die gebouwd wordt door IntelliJ/Maven gekoppeld aan de applicatieserver en start de server de juiste applicatie. 
 
 ## 2: Aanmaken eerste REST-Resource
 Om snel te kunnen testen of de applicatie wel wil deployen is het raadzaam als eerste een REST-Resource te maken
