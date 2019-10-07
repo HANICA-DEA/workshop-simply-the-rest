@@ -113,7 +113,12 @@ Test of het lukt om beide representaties op te vragen.
 Het is met JavaEE mogelijk om automatisch [JSON](https://www.json.org/) te genereren van Java-Objecten.
 Wanneer je methode een Java-Object retourneert, dan zal JavaEE (meer specifiek: JAX-RS) automatisch proberen
 het Object te converteren naar het *Media Type* dat je via `@Produces(MediaType.APPLICATION_JSON)` hebt
-aangegeven
+aangegeven. 
+
+Spelregels hiervoor zijn dat de betreffende class moet voldoen aan de zgn. "[bean specificatie](https://docstore.mik.ua/orelly/java-ent/jnut/ch06_02.htm)":
+* De class heeft een parameterloze constructor
+* Alle properties zijn private
+* Alle properties hebben een getter en setter (zie 6.2.2 docstore.mik.ua/orelly/java-ent/jnut/ch06_02.htm voor de precieze eisen)
 
 Pas de voorgaande methode aan die [JSON](https://www.json.org/) retourneert:
 
