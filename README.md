@@ -186,7 +186,7 @@ request een nieuwe instantie van de `ItemResource` klasse maakt. En daarmee ook 
 
 In een normale applicatie zul je dan ook een Database gebruik voor het persisteren van je Data. In 
 dit geval doen we dat niet en kun je het probleem oplossing door `@Singleton` boven je `ItemResource`-klasse
-te zetten. Daarmee maakt haar maar één instantie aan, die over verschillende requests wordt hergebruikt.
+te zetten. Daarmee maakt JAX-RS maar één instantie aan, die over verschillende requests wordt hergebruikt.
 
 ## 10: Toevoegen foutafhandeling
 In voorgaande twee onderdelen heb je enkel de happy-flow geïmplementeerd. Er zijn echter twee situaties
