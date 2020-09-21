@@ -195,7 +195,7 @@ aan en in de `catch` retourneer je een `Response`-object met de juiste status-co
 maar heeft tot gevolg dat je overal `try...catch` constructies in je code krijgt. Het kan dus aanzienlijk
 eleganter.
 
-Gebruik deze resource for het correct implemeteren van de foutafhandeling: [Exception Handling](https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-en/cn/part1/chapter7/exception_handling.html)
+Gebruik deze resource for het correct implemeteren van de foutafhandeling: [Exception Handling](https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/content/en/part1/chapter7/exception_handling.html)
 
 ## 11: Implementeer ook het verwijderen van een *item*
 Implementeer tot slot ook het verwijderen van een *item*. De `ItemService` bevat hier al de benodigde methode voor.
