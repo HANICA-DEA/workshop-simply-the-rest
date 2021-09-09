@@ -34,8 +34,6 @@ klassen uit `services` en dat je je project kunt compileren.
 
 De klassen uit `services` zullen we verderop gaan gebruiken.
 
-Ga voor dit project in IntelliJ naar Edit Configuration (naast de Run en Debug knoppen bovenin het scherm). Klik links op het plusje (+) en kies voor TomEE Server -> Local. Klik naast Application Server op Configure, klik op het plusje (+) en maak een nieuwe server-configuratie aan die verwijst naar de map waar je TomEE hebt geinstalleerd/uitgepakt en druk op OK. Onderin de dialoog staat een melding "Warning: No artifacts marked for deployment", selecteer om dit probleem op te lossen in de Run-Configuratie van TomEE in IntelliJ onder het tabje Deployment de plus (+, External Source) en navigeer naar het war-bestand in de target folder (mocht het nog niet bestaan, voer dan ```mvn package``` eerst uit). Kies in deze dialoog de waarde / voor de Application Context. Op deze manier is de war die gebouwd wordt door IntelliJ/Maven gekoppeld aan de applicatieserver en start de server de juiste applicatie. 
-
 ## 2: Aanmaken eerste REST-Resource
 Om snel te kunnen testen of de applicatie wel wil deployen is het raadzaam als eerste een REST-Resource te maken
 die daarvoor gebruik kan worden en die verder geen complexiteit toevoegt. 
@@ -52,7 +50,10 @@ public class HealthCheckResource {
     }
 }
 ```
-* Deploy je applicatie op TomEE en navigeer via de browser naar de url [http://localhost:8080/health](http://localhost:8080/health). 
+    
+Ga voor dit project in IntelliJ naar Edit Configuration (naast de Run en Debug knoppen bovenin het scherm). Klik links op het plusje (+) en kies voor TomEE Server -> Local. Klik naast Application Server op Configure, klik op het plusje (+) en maak een nieuwe server-configuratie aan die verwijst naar de map waar je TomEE hebt geinstalleerd/uitgepakt en druk op OK. Onderin de dialoog staat een melding "Warning: No artifacts marked for deployment", selecteer om dit probleem op te lossen in de Run-Configuratie van TomEE in IntelliJ onder het tabje Deployment de plus (+, Artifact) en selecteer de bovenste (eindigt op :war). Kies in deze dialoog de waarde / voor de Application Context. Op deze manier is de war die gebouwd wordt door IntelliJ/Maven gekoppeld aan de applicatieserver en start de server de juiste applicatie. 
+    
+* Run nu je applicatie in TomEE en navigeer via de browser naar de url [http://localhost:8080/health](http://localhost:8080/health). 
 
 Merk op dat een Rest-Resource een simpele, standaard Java-Klasse is. Ook wel een 
 [POJO](https://en.wikipedia.org/wiki/Plain_old_Java_object) (Plain Old Java Object) genoemd. Boven de klasse
