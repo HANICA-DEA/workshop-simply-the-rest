@@ -24,6 +24,7 @@ Om hier nu een JavaEE 8 project te maken moeten de volgende stappen worden genom
 * Als default zal *Maven* de gecompileerde klassen samenbundelen tot een `.jar` bestand. Voor een JavaEE project moet dit
 echter een `.war` bestand zijn. Lees op de website van [Maven](https://maven.apache.org/pom.html) na hoe je dit aanpast.
 * Voeg een dependency toe op [JavaEE](https://mvnrepository.com/artifact/javax/javaee-api)
+* Voeg een property toe aan de pom.xml in de <properties> sectie: ```<failOnMissingWebXml>false</failOnMissingWebXml>```
 
 Tot slot moeten we de klassen toevoegen die in deze repository te vinden zijn. Dit betreft de volledige `services`
 map, inclusief alle submappen en bestanden.
@@ -33,7 +34,7 @@ klassen uit `services` en dat je je project kunt compileren.
 
 De klassen uit `services` zullen we verderop gaan gebruiken.
 
-Ga voor dit project in IntelliJ naar Edit Configuration (naast de Run en Debug knoppen bovenin het scherm). Klik links op het plusje (+) en kies voor TomEE Server -> Local. Klik naast Application Server op Configure, klik op het plusje (+) en maak een nieuwe server-configuratie aan die verwijst naar de map waar je TomEE hebt geinstalleerd/uitgepakt en druk op OK. Onderin de dialoog staat een melding "Warning: No artifacts marked for deployment", selecteer op dit probleem op te lossen de Fix-knop en kies de bovenste van de twee opties, het war-bestand. Op deze manier is de war die gebouwd wordt door IntelliJ/Maven gekoppeld aan de applicatieserver en start de server de juiste applicatie. 
+Ga voor dit project in IntelliJ naar Edit Configuration (naast de Run en Debug knoppen bovenin het scherm). Klik links op het plusje (+) en kies voor TomEE Server -> Local. Klik naast Application Server op Configure, klik op het plusje (+) en maak een nieuwe server-configuratie aan die verwijst naar de map waar je TomEE hebt geinstalleerd/uitgepakt en druk op OK. Onderin de dialoog staat een melding "Warning: No artifacts marked for deployment", selecteer om dit probleem op te lossen in de Run-Configuratie van TomEE in IntelliJ onder het tabje Deployment de (+) en navigeer naar het war-bestand in de target folder (mocht het nog niet bestaan, voer dan ```mvn package``` eerst uit. Op deze manier is de war die gebouwd wordt door IntelliJ/Maven gekoppeld aan de applicatieserver en start de server de juiste applicatie. 
 
 ## 2: Aanmaken eerste REST-Resource
 Om snel te kunnen testen of de applicatie wel wil deployen is het raadzaam als eerste een REST-Resource te maken
