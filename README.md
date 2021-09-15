@@ -9,7 +9,7 @@ Ook zullen we werken met verschillende *Media Types* en zullen we automatisch [J
 genereren en inlezen.
 
 Tot slot zullen we ook nette foutafhandeling toe voegen, met behulp van 
-[ExceptionMappers](https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-en/cn/part1/chapter7/exception_handling.html). 
+[ExceptionMappers](https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/content/en/part1/chapter7/exception_handling.html). 
 
 ## Voorbereiding
 Voor deze oefening moet [TomEE 8.0.4 Plus](https://tomee.apache.org/download-archive.html) geïnstalleerd zijn en zodanig 
@@ -18,20 +18,17 @@ geconfigureerd dat het mogelijk is vanuit de IDE een JavaEE War kunt deployen. A
 
 ## 1: Aanmaken nieuwe JavaEE 8 project
 Gebruik Maven command line voor het aanmaken van een nieuw Java project. Gebruik hiervoor een archetype voor een standaard 
-Java project. Zorg ervoor dat je Maven command line kan compileren _mét_ lambda expressies. Maak je project leeg (verwijder 
-eventuele klassen die je van je archetype krijgt).
+Java project. Maak je project leeg (verwijder eventuele klassen en dependencies die je van je archetype krijgt).
 
-Om hier nu een JavaEE 8 project te maken moeten de volgende stappen worden genomen:
+Om hier nu een JavaEE 8 project van te maken moeten de volgende stappen worden genomen:
 
 * Als default zal *Maven* de gecompileerde klassen samenbundelen tot een `.jar` bestand. Voor een JavaEE project moet dit
 echter een `.war` bestand zijn. Lees op de website van [Maven](https://maven.apache.org/pom.html) na hoe je dit aanpast
 * Voeg een dependency toe op [JavaEE](https://mvnrepository.com/artifact/javax/javaee-api)
-
-Tot slot moeten we de klassen toevoegen die in de huidige repository te vinden zijn. Dit betreft de volledige `services`
+* Tot slot moeten we de klassen toevoegen die in de huidige repository te vinden zijn. Dit betreft de volledige `services`
 map, inclusief alle submappen en bestanden.
-
-* Kopieer de map `services` in de package structuur van je project. Zorg ervoor dat alle imports kloppen voor de 
-klassen uit `services` en dat je je project kunt compileren
+  * Kopieer de map `services` naar je project, in een goede package structuur. Zorg ervoor dat je je project kunt compileren 
+met Maven op de command line
 
 De klassen uit `services` zullen we verderop gaan gebruiken.
 
@@ -82,6 +79,8 @@ op de *Deployment*-tab van de *Run-configuratie* in je IDE, zorg dan dat hier en
 dan kan het zijn dat je niet versie 8.0.4 van TomEE gebruikt. Versie 8.0.6 heeft hier namelijk een probleem mee
 * Het kan ook zijn dat je fouten krijgt over een missend web.xml bestand (een zgn. deployment descriptor). Voeg voor nu dan 
 de volgende property toe aan de `<properties>` van je pom.xml: ```<failOnMissingWebXml>false</failOnMissingWebXml>```
+* Tenslotte kunnen andere installaties van TomEE/Tomcat er voor zorgen dat je niet de juiste container op start of dat je 
+een verkeerde configuratie gebruikt. Zorg dus dat je alleen `TomEE 8.0.4 Plus` hebt geïnstalleerd
 
 Als je bovenstaande tips hebt toegepast en je ziet (nog steeds) foutmeldingen die wijzen op iets niet kunnen deployen, dan is er vermoedelijk sprake van een rechtenprobleem: herstart IntelliJ als Administrator. 
 
