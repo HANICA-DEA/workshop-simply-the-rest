@@ -195,9 +195,10 @@ Wij gaan voor de rest van de workshop alleen [JSON](https://www.json.org/) consu
 (i.e. responses), dus zorg dat je hiervoor een juiste `/items` Resource hebt.
 
 ## 6: Automatisch [JSON](https://www.json.org/) genereren van Java-Objecten
-Om van onze String return-waarde nu een echte lijst te kunnen maken kunnen we JavaEE functionaliteit gebruiken. Het is met 
-JavaEE namelijk mogelijk om automatisch JSON te genereren van Java-Objecten. Wanneer je methode een Java-Object retourneert, 
-dan zal JavaEE (specifiek: de JSON-B library van JAX-RS) automatisch proberen het Object te converteren naar het *Media Type*
+Om van onze String return-waarde nu een echte lijst te kunnen maken kunnen we Jakarta EE functionaliteit gebruiken. Het is met
+Jakarta EE namelijk mogelijk om automatisch JSON te genereren van Java-Objecten. Wanneer je methode een Java-Object retourneert, 
+dan zal Jakarta EE (specifiek: de JSON-B API) automatisch proberen 
+het Object te converteren naar het *Media Type*
 dat je via `@Produces(MediaType.APPLICATION_JSON)` hebt aangegeven. 
 
 Spelregels hiervoor zijn dat de betreffende class moet voldoen aan de zgn. "[bean specificatie](https://docstore.mik.ua/orelly/java-ent/jnut/ch06_02.htm)":
