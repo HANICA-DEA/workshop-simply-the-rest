@@ -127,7 +127,7 @@ Deze applicatie heeft geen main-methode maar wordt gerund op een applicatieserve
 * Klik naast Application Server op Configure, klik op het plusje `+`en maak een nieuwe server-configuratie aan die verwijst naar de map waar je WildFly hebt geinstalleerd/uitgepakt en druk op OK. Onderin de dialoog staat een melding `Warning: No artifacts marked for deployment`, selecteer om dit probleem op te lossen in de Run-Configuratie van WildFly in IntelliJ onder het tabje Deployment de plus (`+`, Artifact) en selecteer de bovenste (eindigt op `:war`).
 * Klik op OK en sluit het dialoogvenster.
     
-Run nu je applicatie in WildFly en navigeer via de browser naar de url [http://localhost:8080/simply-the-rest/health](http://localhost:8080/simply-the-rest/health). Je ziet nu als het goed is dat de applicatie werkt en in de browser "Up & Running" toont.
+Run nu je applicatie in WildFly en navigeer via de browser naar de url [http://localhost:8080/simplytherest/health](http://localhost:8080/simplytherest/health). Je ziet nu als het goed is dat de applicatie werkt en in de browser "Up & Running" toont.
 
 Merk op dat deze REST Resource een simpele, standaard Java-Klasse is. Ook wel een 
 [POJO](https://en.wikipedia.org/wiki/Plain_old_Java_object) (Plain Old Java Object) genoemd. Boven de klasse
