@@ -208,9 +208,9 @@ Spelregels hiervoor zijn dat de betreffende class moet voldoen aan de zgn. "[bea
 
 Pas de voorgaande methode aan die [JSON](https://www.json.org/) retourneert:
 
-* Declareer in je Resource-klasse een variabele van het type `ItemService` en gebruik vervolgens een constructor om deze te instantiëren
-* Het return type van je methode is niet langer een String, maar wordt nu een `List<ItemDTO>`.
+* Declareer in je Resource-klasse een variabele van het type `ItemService` en gebruik vervolgens een constructor om deze te instantiëren.
 * Gebruik in de gegeven Klasse `ItemService` de methode die een `List<ItemDTO>` retourneert. 
+* Het return type van je methode is niet langer een String, maar wordt nu een `List<ItemDTO>`.
 
 Test je Resource met Postman en bekijk hoe de JSON in je response er nu uit ziet. Kan je de structuur verklaren als je kijkt 
 naar het Java object?
