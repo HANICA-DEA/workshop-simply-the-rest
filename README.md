@@ -94,7 +94,7 @@ De klassen uit `services` zullen we verderop gaan gebruiken.
 ## 2: Aanmaken eerste REST-Resource
 Om snel te kunnen testen of de applicatie wel wil deployen is het raadzaam als eerste een REST-Resource te maken
 die daarvoor gebruik kan worden en die verder geen complexiteit toevoegt. Daarvoor zijn twee stappen nodig:
-* Maak in de package `nl.han.oose.dea.rest.resources` een klasse `SimplyTheRestApplication` met de volgende inhoud:
+* Maak een nieuwe package `nl.han.oose.dea.rest.resources` en maak daarin de klasse `SimplyTheRestApplication` met de volgende inhoud:
 ```java
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
