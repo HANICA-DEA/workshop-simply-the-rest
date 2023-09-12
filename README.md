@@ -86,7 +86,7 @@ Alleen de eerste plugin zou nieuw moeten zijn voor je, daarmee kun je met Maven 
 ```
 * Tot slot moeten we de klassen toevoegen die in de huidige repository te vinden zijn. Dit betreft de volledige `services`
 map, inclusief alle submappen en bestanden.
-  * Kopieer de map `services` naar je project, naar een goede package structuur ```nl.han.oose.dea.rest```. Zorg ervoor dat je je project kunt compileren 
+  * Kopieer de map `services` naar je project, naar een nieuwe package ```nl.han.oose.dea.rest```. Zorg ervoor dat je je project kunt compileren 
 met Maven op de command line. Probeer eerst ```mvn compile``` en als dat goed gaat ```mvn package``` en check of er uit die laatste stap een war-bestand komt. 
 
 De klassen uit `services` zullen we verderop gaan gebruiken.
